@@ -1,0 +1,162 @@
+
+clase Categoria
+	private definir nombre como caracter
+	private definir porcDesc como real
+	
+	public metodo Categoria(n,p)
+		nombre = n
+		porcDesc = p
+	fin metodo
+	
+fin clase
+
+clase Producto
+	protected definir nombre como caracter
+	private definir precio como real
+	private definir categoria como Categoria
+	
+	public metodo Producto(n,p,c)
+		nombre = n
+		precio = p
+		categoria = c
+	fin metodo
+	
+	public metodo calcularMontoDesc()
+		return precio*categoria.getPorcDesc()
+	fin metodo
+	
+	public metodo calcularPrecioConDesc()
+		return precio - calcularMontoDesc()
+	fin metodo
+fin clase
+
+clase Perecedero extiende Producto
+	private definir fechaExpiracion como Fecha
+	
+	public metodo mostrarExpiracion()
+		mostrar "El procuto " nombre " expira el " fechaExpiracion.getFechaCadena()
+	fin metodo
+fin clase
+
+clase Tienda
+	private definir productos como coleccion
+	private definir nombre como caracter
+	private definir horario como caracter
+	
+	public metodo calcularPromedioPrecios()
+		definir acum como real
+		definir i como entero
+		
+		si productos.longitud = 0 entonces
+			return 0
+		sino
+			acum = 0
+			para i=0 hasta productos.longitud-1 hacer
+				acum = acum + productos[i].getPrecio()
+			fin para
+			
+			return acum/productos.longitud
+		fin si
+		
+	fin metodo
+	
+	public metodo agregarProducto(prod)
+		si productos.longitud < 10 entonces
+			productos.agregar(prod)
+			return verdadero
+		sino
+			return falso
+		fin si
+	fin metodo
+	
+	public metodo getProducto(i)
+		si i < productos.longitud entonces
+			return productos[i]
+		sino
+			return null
+		fin si
+	fin metodo
+	
+	public metodo getLongitudProductos()
+		return productos.longitud
+	fin metodo
+	
+fin clase
+
+algoritmo clase4
+	definir t como Tienda
+	definir productos como Coleccion
+	definir prod como Producto
+	definir nom como caracter
+	definir nomCat como caracter
+	definir pre como real
+	definir porc como real
+	definir cat como Categoria
+	definir prodPer como Perecedero
+	
+	prodPer = new Perecedero()
+	prodPer.setNombre("tomate")
+	prodPer.setPrecio(5)
+	prodPer.setFechaExpiracion(new Fecha(25,4,2022))
+	prodPer.mostrarExpiracion()
+	
+	t = nuevo Tienda()
+	
+	mientras
+		mostrar "Introduzca el nombre del producto: "
+		leer nom
+		mostrar "Introduzca el precio del producto: "
+		leer pre
+		mostrar "Introduzca el nombre de la categoria: "
+		leer nomCategoria
+		mostrar "Introduzca el porcentaje de descuento: "
+		leer porc
+		
+		cat = new Categoria(nomCat,porc)
+		
+		//prod = new Producto(nom,pre,cat)
+		
+		t.agregarProducto(prod)
+		
+		mostrar "La categoria de " prod.getNombre() " es "
+				prod.getCategoria().getNombre() // o cat.getNombre()
+		
+		si prod.getCategoria().getPorcDesc() > 0 entonces
+			mostrar "el producto tiene descuento"
+			mostrar "El monto de descuento es " prod.calcularMontoDesc()
+		sino
+			mostrar "el producto no tiene descuento"
+		fin si
+	fin mientras
+	
+	si productos[0].getPrecio() == productos[productos.longitud-1].getPrecio() entonces
+		mostrar "Los precios del primer y ultimo producto son iguales"
+	fin si
+	
+	t.mostrarProductosConDesc()
+	mostrar "El promedio de precios de la tienda es: " t.calcularPromedioPrecios()
+	mostrar "La tienda tiene " t.getLongitudProductos()-1 " productos registrados"
+	
+	//no es valido si la coleccion es privada
+	t.productos[0].getNombre()
+	
+	para i=0 hasta t.getLongitudProductos()-1
+		prod = t.getProducto(i)
+		//indirecto (recomendable)
+		mostrar prod.getNombre()
+		mostrar prod.getPrecio()
+		
+		//directo
+		mostrar t.getProducto(i).getNombre()
+		mostrar t.getProducto(i).getPrecio()
+	fin para
+	
+	// luego del ciclo
+	mostrar "Los productos con descuento"
+	para i=0 hasta productos.longitud-1 hacer
+		si productos[i].getCategoria().getporcDesc() > 0 entonces
+			mostrar productos[i]
+		fin si
+		mostrar productos[i].getNombre()
+	fin para
+fin algoritmo

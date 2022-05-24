@@ -1,0 +1,212 @@
+
+Clase Vuelo
+	private definir ciudadDest como caracter
+	private definir horaSalida como caracter
+	private definir cantPasajeros como entero
+	
+	public metodo Vuelo(cd,hs,cp)
+		ciudadDest = cd
+		horaSalida = hs
+		cantPasajeros = cp
+	fin metodo
+	
+	//****Getters y setters de ciudadDest******
+	public metodo setCiudadDest(ciud)
+		ciudadDest = ciud
+	fin metodo
+	
+	public metodo getCiudadDest()
+		return ciudadDest
+	fin metodo
+	//************************************
+	
+	//****Getters y setters de horaSalida******
+	public metodo setHoraSalida(hora)
+		horaSalida = hora
+	fin metodo
+	
+	public metodo getHoraSalida()
+		return horaSalida
+	fin metodo
+	//************************************	
+	
+	//****Getters y setters de cantPasajeros******
+	public metodo setCantPasaj(cantidadPasa)
+		cantPasajeros = cantidadPasa
+	fin metodo
+	
+	public metodo getCantPasaj()
+		return cantPasajeros
+	fin metodo
+	//************************************
+	
+	public metodo precioVuelo()
+		definir precio como entero
+		si ciudDest = "Caracas" entonces
+			precio = 20
+			return precio
+		sino
+			si ciudDest = "Porlamar" entonces
+				precio = 30
+				return precio
+			sino
+				si ciudDest = "Puerto Ordaz" entonces
+					precio = 35
+					return precio
+				fin si
+			fin si
+		fin si	
+	fin metodo
+	
+	public metodo getMontoVuelo()
+		return cantPasajeros * precioVuelo()
+	fin metodo
+fin clase
+
+Clase Avion
+	private definir codigo como caracter
+	private definir capacPasaj como entero
+	private definir capacCombust como entero
+	
+	public metodo Avion()
+		codigo = "sin codigo"
+		capacPasaj = -1
+		capacCombust = -1
+	fin metodo
+	
+	//****Getters y setters de codigo******
+	public metodo setCodigo(codig)
+		codigo = codig
+	fin metodo
+	
+	public metodo getCodigo()
+		return codigo
+	fin metodo
+	//************************************
+	
+	//****Getters y setters de capacPasaj******
+	public metodo setCapacPasaj(capacidadPasaj)
+		capacPasaj = capacidadPasaj
+	fin metodo
+	
+	public metodo getCapacPasaj()
+		return capacPasaj
+	fin metodo
+	//************************************
+	
+	//****Getters y setters de capacCombust******
+	public metodo setCapacCombust(capacidadCombust)
+		capacCombust = capacidadCombust
+	fin metodo
+	
+	public metodo getCapacCombust()
+		return capacCombust
+	fin metodo
+	//************************************
+	
+fin clase
+
+Clase Piloto
+	private definir nombre como caracter
+	private definir edad como entero
+	private definir sexo como caracter
+	
+	public metodo Piloto()
+		nombre = "sin nombre"
+		edad = -1
+		sexo = "sin género"
+	fin metodo
+	
+	//****Getters y setters de nombre******
+	public metodo setNombre(nom)
+		nombre = nom
+	fin metodo
+	
+	public metodo getNombre()
+		return nombre
+	fin metodo
+	//************************************
+	
+	//****Getters y setters de edad******
+	public metodo setEdad(age)
+		edad = age
+	fin metodo
+	
+	public metodo getEdad()
+		return edad
+	fin metodo
+	//************************************
+	
+	//****Getters y setters de sexo******
+	public metodo setSexo(sex)
+		sexo = sex
+	fin metodo
+	
+	public metodo getSexo()
+		return sex
+	fin metodo
+	//************************************
+fin clase
+
+algoritmo desafio3
+	definir vuelo como Vuelo("","",-1)
+	definir pilot como Piloto
+	definir avion como Avion
+	definir ciudadDestino, avionLleno, horaSalida, codigoAvion, nombre, sexo como caracter
+	definir montoVuelo como real
+	definir cantidadPasajeros, capacidadPasajeros, capacidadCombustible como entero
+	definir edad como entero
+	
+	Para i=1 hasta 3 hacer
+		avion = new Avion()
+		pilot = new Piloto()
+		mostrar "Introduzca la ciudad destino del vuelo: "
+		leer ciudadDestino
+		mostrar "Introduzca la hora de salida del vuelo: "
+		horaSalida
+		mostrar "Introduzca la cantidad de pasajeros: "
+		cantidadPasajeros
+		
+		mostrar "Introduzca el codigo del avion: "
+		leer codigoAvion
+		mostrar "Introduzca la capacidad del avion: "
+		leer capacidadPasajeros
+		mostrar "Introduzca la capacidad de combustible del avion: "
+		leer capacidadCombustible
+		
+		mostrar "Introduzca el nombre del piloto: "
+		leer nombre
+		mostrar "Introduzca la edad del piloto: "
+		leer edad
+		mostrar "Introduzca el sexo del piloto: "
+		leer sexo
+		
+		vuelo = new Vuelo(ciudadDestino,horaSalida,cantidadPasajeros)
+		
+		avion.setCodigo(codigoAvion)
+		avion.setCapacPasaj(capacidadPasajeros)
+		avion.setCapacCombust(capacidadCombustible)
+		
+		pilot.setNombre(nombre)
+		pilot.setEdad(edad)
+		pilot.setSexo(sexo)
+		
+		/*
+		vuelo.setCiudadDest(ciudadDestino)
+		vuelo.setHoraSalida(horaSalida)
+		vuelo.setCantPasaj(cantidadPasajeros)
+		*/
+		
+		si vuelo.getCantPasaj() = avion.getCapacPasaj() entonces
+			avionLleno = "el avion está lleno"
+		sino
+			avionLleno = "el avión no está lleno"
+		fin si
+		
+		mostrar "La ciudad destino del vuelo es: " vuelo.getCiudadDest()
+		mostrar "El monto total del vuelo es: " vuelo.getMontoVuelo()
+		mostrar "Y además " avionLleno
+		mostrar "El nombre del piloto para el vuelo es: " pilot.getNombre()
+	fin para
+	
+fin algoritmo

@@ -1,0 +1,277 @@
+
+Clase Cuenta
+	privado definir nroCuenta como entero
+	privado definir tipoCuenta como caracter
+	privado definir saldo como real
+		
+	public metodo getNroCuenta()
+		return nroCuenta
+	fin metodo
+	
+	public metodo setNroCuenta(nuevoNro)
+		nroCuenta = nuevoNro
+	fin metodo
+	
+	public metodo getTipoCuenta()
+		return TipoCuenta
+	fin metodo
+	
+	public metodo setTipoCuenta(nuevoTipo)
+		tipoCuenta = nuevoTipo
+	fin metodo
+	
+	public metodo getSaldo()
+		return saldo
+	fin metodo
+	
+	public metodo setNroCuenta(nuevoSald)
+		saldo = nuevoSald
+	fin metodo
+fin clase
+
+clase Cliente
+	protegido definir nombre como caracter
+	protegido definir rif como caracter
+
+	publico metodo Cliente(n,r)
+		nombre = n
+		rif = r
+	fin metodo
+
+	publico metodo getNombre()
+		return nombre
+	fin metodo
+
+	publico metodo setNombre(nuevoNom)
+		nombre = nuevoNom
+	fin metodo
+
+	publico metodo getRif()
+		return rif
+	fin metodo
+
+	publico metodo setRif(nuevoRif)
+		rif = nuevoRif
+	fin metodo
+	
+fin clase
+
+clase PerNatural extiende Cliente
+	private definir sexo como caracter
+	private definir estadCivil como caracter
+	private definir fechaNac como caracter
+	private definir cuentaBanc como Cuenta
+	
+	public metodo PerNatural(s,e,f,c)
+		sexo = s
+		estadCivil = e
+		fechaNac = f
+		cuentaBanc = c
+	fin metodo
+	
+	public metodo getSexo()
+		return sexo
+	fin metodo
+	
+	public metodo setSexo(nuevoSex)
+		sexo = nuevoSex
+	fin metodo
+	
+	public metodo getEstadCivil()
+		return estadCivil
+	fin metodo
+	
+	public metodo setEstadCivil(nuevoEstad)
+		estadCivil = nuevoEstad
+	fin metodo
+	
+	public metodo getFechaNac()
+		return FechaNac
+	fin metodo
+	
+	public metodo setFechaNac(nuevoFechaNac)
+		fechaNac = nuevoFechaNac
+	fin metodo
+	
+	public metodo getCuentaBanc()
+		return cuentaBanc
+	fin metodo
+	
+fin clase
+
+clase PerJuridica extiende Cliente
+	private definir fechaFund, socios como caracter
+	private definir capitalSocial como real
+	private definir cuentaBanc como Cuenta
+	
+	public metodo PerJuridica(f,s,cs,c)
+		fechaFund = f
+		socios = s
+		capitalSocial = cs
+		cuentaBanc = c
+	fin metodo
+	
+	public metodo getFechaFund()
+		return fechaFund
+	fin metodo
+	
+	public metodo setFechaFund(nuevoFechaFund)
+		fechaFund = nuevoFechaFund
+	fin metodo
+	
+	public metodo getSocio()
+		return socios
+	fin metodo
+	
+	public metodo setSocio(nuevoSocio)
+		socios = nuevoSocio
+	fin metodo
+	
+	public metodo getCapitSocial()
+		return capitalSocial
+	fin metodo
+	
+	public metodo setCapitSocial(nuevoCapit)
+		capitalSocial = nuevoCapit
+	fin metodo
+	
+	public metodo getCuentaBanc()
+		return cuentaBanc
+	fin metodo
+fin clase
+
+clase Banco
+	private definir nombreBanc como caracter
+	private definir persNat,persJurid como coleccion
+	
+	public metodo Banco(n)
+		nombreBanc = n
+	fin metodo
+	
+	public metodo getNombreBanc()
+		return nombreBanc
+	fin metodo
+	
+	public metodo setNombreBanc(nuevoNom)
+		nombreBanc = nuevoNom
+	fin metodo
+	
+	public metodo agregarPersonaNat(persN)
+		persNat.agregar(persN)
+	fin metodo
+	
+	public metodo agregarPersJud(persJ)
+		persJurid.agregar(persJ)
+	fin metodo
+	
+	public metodo getPersonaNat(i)
+		si i < persNat.longitud entonces
+			return persNat[i]
+		sino
+			return null
+		fin si
+	fin metodo
+	
+	public metodo getPersJud(j)
+		si j < persJurid.longitud entonces
+			return persJurid[j]
+		sino
+			return null
+		fin si
+	fin metodo
+	
+	public metodo getLongitudPerNat(k)
+		return persNat.longitud
+	fin metodo
+	
+	public metodo getLongitudPerJud(m)
+		return persJurid.longitud
+	fin metodo
+fin clase
+
+algoritmo desafio4
+	definir banc como Banco
+	definir personaNatural como coleccion
+	definir personaJuridico como coleccion
+	definir nat como PerNatural
+	definir jud como PerJuridica
+	definir cuentBanc como Cuenta
+	definir client como Cliente
+	definir respuesta,tipoClient como caracter
+	definir nombreBanc,tipoCuenta como caracter
+	definir nroCuenta, saldo como real
+	definir nombreClient,rif,sexo,estadoCivil,fechaNac,fechaFund,capitalSocial,socio como caracter
+	
+	mostrar "Ingrese el nombre del banco: "
+	leer nombreBanc
+	banc = new Banco(nombreBanc)
+
+	repetir
+		mostrar "Ingrese el nombre del cliente: "
+		leer nombreClient
+		mostrar "Ingrese el rif del cliente: "
+		leer rif
+		mostrar "Ingrese el numero de cuenta: "
+		leer nroCuenta
+		mostrar "Ingrese el tipo de cuenta: "
+		leer tipoCuenta
+		mostrar "Ingrese el saldo de la cuenta: "
+		leer saldo
+		mostrar "Ingrese el tipo de cliente: "
+		leer tipoClient
+		
+		cuentBanc = new Cuenta(nroCuenta,tipoCuenta,saldo)
+		
+		si tipoClient == "Natural" entonces
+			mostrar "Ingrese el sexo del cliente: "
+			leer sexo
+			mostrar "Ingrese el estado civil del cliente: "
+			leer estadoCivil
+			mostrar "Ingrese la fecha de nacimiento del cliente: "
+			leer fechaNac
+			
+			nat = new PerNatural(sexo,estadoCivil,fechaNac,cuentBanc)
+			
+			banc.agregarPersonaNat(nat)
+		sino
+			si tipoClient == "Juridico" entonces
+				mostrar "Ingrese la fecha de fundacion del cliente: "
+				leer fechaFund
+				mostrar "Ingrese el capital social del cliente: "
+				leer capitalSocial
+				mostrar "Ingrese el socio del cliente: "
+				leer socio
+				
+				jud = new PerJuridica(fechaFund,capitalSocial,socio,cuentBanc)
+				banc.agregarPersJud(jud)
+			fin si
+		fin si
+		mostrar "¿Desea registrar otro cliente?"
+		leer respuesta
+	hasta que respuesta == "No"
+	
+	mostrar "Listado de los clientes naturales cuyo saldo es menor a 500"
+	
+	para i=0 hasta banc.getLongitudPerNat()-1
+		nat = banc.getPersonaNat(i)
+		
+		si nat.getCuentaBanc.getSaldo < 500
+			mostrar nat.getNombre()
+			mostrar nat.getRif()
+			mostrar nat.getCuentaBanc.getSaldo()
+		fin si
+	fin para
+	
+	mostrar "Listado de los clientes jurídicos cuyo saldo es mayor a 1000"
+	
+	para j=0 hasta banc.getLongitudPerJud()-1
+		jud = banc.getPersJud(j)
+		
+		si jud.getCuentaBanc.getSaldo > 1000
+			mostrar jud.getNombre()
+			mostrar jud.getRif()
+			mostrar jud.getCuentaBanc.getSaldo()
+		fin si
+	fin para
+	
+fin algoritmo

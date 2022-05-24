@@ -1,0 +1,19 @@
+INICIO
+1- Encender la PC.
+2- Abrir nuestro navegador.
+3- Buscar la página web de Cadif1.
+4- Si la sesión no está iniciada, iniciarla.
+5- Buscar nuestra sección de la materia.
+6- Dar click en el botón verde de la sección.
+7- Buscar el apartado "Desafíos".
+8- Darle click.
+9- Al visualizar el desafío, dar click en "Ver enunciado".
+10- Leer las instrucciones detalladamente para realizar el desafío.
+11- Realizar el desafío en el tipo de archivo que nos pidan.
+12- Guardar el archivo en la PC.
+13- Si se debe comprimir, comprimirlo.
+14- En la página de cadif1, buscar "Cargar solución".
+15- Darle click.
+16- Subir el archivo del desafío.
+FIN
+

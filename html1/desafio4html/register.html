@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Document</title>
+
+    <style type="text/css">
+        *{
+            font-family: 'Montserrat Alternates', sans-serif;;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 id="encabezado">Registro</h1>
+        </div>
+        <nav>
+            <a class = "spanNav" href="./index.html">Página Principal</a>
+            <a class = "spanNav" href="./clientes.html">Clientes</a>
+        </nav>
+    </header> 
+    <main>
+        <h2>Registrate en nuestro sitio!</h1>
+        <form action="" method="get" style="text-align: center;">
+        <span class="spanForm">Indicanos tu nombre:</span>
+        <input type="text" name="nombre" id="" required><br><br>
+
+        <span class="spanForm">Indicanos tu apellido:</span>
+        <input type="text" name="apellido" id="" required maxlength="10"><br><br>
+
+        <span class="spanForm">Introduce tu clave:</span>
+        <input type="password" name="clave" id="" required><br><br>
+
+        <span class="spanForm">Introduce tu correo:</span>
+        <input type="email" name="email" id="" required><br><br>
+
+        <span class="spanForm">Introduce tu sexo:</span>
+        <select name="sexo" id="">
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+        </select><br><br>
+
+        <span class="spanForm">Indicanos tu tipo de negocio:</span>
+        <input type="checkbox" name="preferencia1" id="">
+        <span class="spanCheckbox">Independiente</span>
+        <input type="checkbox" name="preferencia2" id="">
+        <span class="spanCheckbox">Formal</span>
+        <input type="checkbox" name="preferencia3" id="">
+        <span class="spanCheckbox">Empresarial</span>
+        <input type="checkbox" name="preferencia4" id="">
+        <span class="spanCheckbox">Internacional</span>
+        <input type="checkbox" name="preferencia5" id="">
+        <span class="spanCheckbox">Nacional</span><br><br>
+
+        <span class="spanForm">Indica tu estado civil:</span><br>
+        <input type="radio" name="estadCivil" value="1" id="">
+        <span class="spanCheckbox">Casado</span><br>
+        <input type="radio" name="estadoCivil" value="2" id="">
+        <span class="spanCheckbox">Divorciado</span><br>
+        <input type="radio" name="estadCivil" value="3" id="">
+        <span class="spanCheckbox">Soltero</span><br>
+        <input type="radio" name="estadoCivil" value="4" id="">
+        <span class="spanCheckbox">Viudo</span><br><br>
+
+        <input type="submit" value="Registrarse" id="submitRegister">
+        <input type="reset" value="Limpiar Campos" class="botonesForm">
+    </main>
+</body>
+</html>

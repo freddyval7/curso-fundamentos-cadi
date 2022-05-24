@@ -1,0 +1,52 @@
+
+clase Producto
+	private definir nombre como caracter
+	private definir precio como real
+	private definir existencia como entero
+	
+	public metodo setNombre(n)
+		nombre = n
+	fin metodo
+	
+	public metodo getNombre()
+		return nombre
+	fin metodo
+	
+	public metodo leerDatos()
+		mostrar "Introduzca el nombre: "
+		leer nombre
+		leerExistencia()
+		leerPrecio()
+	fin metodo
+	
+	private metodo leerExistencia()
+		mostrar "Introduzca la existencia: "
+		leer existencia
+	fin metodo
+	
+	private metodo leerPrecio()
+		mostrar "Introduzca el precio: "
+		leer precio
+	fin metodo
+	
+	public metodo calcularMontoInventario()
+		return existencia*precio
+	fin metodo
+	
+fin clase
+
+algoritmo clase2c
+	definir a, b como Producto
+	definir monto como real
+	
+	monto = a.calcularMontoInventario() + b.calcularMontoInventario()
+	
+	a = new Producto()
+	b = new Producto()
+	
+	a.leerDatos()
+	b.leerDatos()
+	
+	mostrar "El monto del inventario de la empresa es: " monto
+	
+fin algoritmo

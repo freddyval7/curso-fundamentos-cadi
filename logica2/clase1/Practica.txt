@@ -1,0 +1,7 @@
+a) Soy empleado antiguo si años_trabajando >= 20
+b) Tengo suficiente para pagar si dinero >= monto
+c) Comienza el curso si alumnos >= 8
+d) Obtengo descuento si monto > 10000
+e) Juego beisbol si entradas >= 4
+f) Puedo llevarme más si unidades <= 12
+

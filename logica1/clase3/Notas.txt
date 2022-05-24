@@ -1,0 +1,7 @@
+Las fracciones: Englobar el numerador y el denominador entre paréntesis.
+
+Con coeficientes: Englobar el coeficiente entre paréntesis. No olvidar el símbolo del producto "*"
+
+Expresiones con potencia: Englobar la expresión entre paréntesis
+
+Las raíces: Englobar al radicando entre paréntesis. Englobar también entre paréntesis a la potencia 

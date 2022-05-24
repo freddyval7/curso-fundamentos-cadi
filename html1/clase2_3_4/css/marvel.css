@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Disney";
+    src: url(../fonts/waltographUI.ttf);
+}
+@font-face {
+    font-family: "Transformer";
+    src: url(../fonts/Transformers\ Movie.ttf);
+}
+body{
+    background-color: #202020;
+    font-family: "Segoe UI";
+    margin: 0;
+}
+/*HEADER*/
+header{
+    background: linear-gradient(to left top, rgb(228, 71, 71),rgb(64, 64, 230));
+    height: 100px;
+}
+#divLogo{
+    text-align: center;
+}
+nav{
+    text-align: center;
+}
+.spanNav{
+    color: #DCFFFF;
+    text-decoration: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.spanNav:hover{
+    /* text-decoration: underline; */
+    border-bottom: #DCFFFF;
+}
+h4{
+    color: #b8c7c7;
+    text-transform: uppercase;
+}
+
+/*MAIN*/
+h1{
+    font-family: "Transformer";
+    background: linear-gradient(to right, red,blue);
+}
+
+/*Section article*/
+
+.pArticle{
+    font-weight: bold;
+}
+.articleSection{
+    width: 20%;
+    display: inline-block;
+    height: 310px;
+}
+
+.imgArticle{
+    width: 270px;
+    text-align: left;
+
+}
+
+#section2{
+    background-color: white;
+    text-align: center;
+}
+
+/*Section Lista*/
+#listas{
+    height: 300px;
+}
+.articleLista{
+    width: 49.7%;
+    height: 300px;
+    display: inline-block;
+    color: white;
+    font-style: italic;
+    word-spacing: 4px;
+    text-decoration: wavy;
+    line-height: 1.7em;
+}
+
+/*Section de tablas*/
+#tabla{
+    color: rgb(252, 246, 246);
+    text-align: center;
+    font-weight: bolder;
+}
+table{
+    margin: 0 auto;
+    background-image: url(../HTM-N1-3843-C3/img/strangeImg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.imgTabla{
+    width: 25px;
+    height: 25px;
+}
+tr{
+    height: 75px;
+}
+th,td{
+    padding: 1em;
+    text-shadow: #151515 -2px 2px 2px;
+}
+
+/*Formularios*/
+/*Formulario de ingreso*/
+
+.spanForm{
+    color: white;
+    font-weight: bold;
+}
+
+/*formulario de registro*/
+#submitRegister{
+    background-color: rgb(207, 39, 39);
+    border: none;
+    padding: 0.5em 3em;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#submitRegister:hover{
+    cursor: pointer;
+}
+.spanCheckbox{
+    color: white;
+}

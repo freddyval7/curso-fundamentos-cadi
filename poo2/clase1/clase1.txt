@@ -1,0 +1,82 @@
+
+Clase Alumno
+	//entradas
+	definir nombre como caracter
+	definir notaParcial1 como real
+	definir notaParcial2 como real
+	definir notaParcial3 como real
+	definir notaEvalContinua como real
+	definir notaTrabajo como real
+	
+	//salidas
+	definir nota100 como real
+	definir nota20 como real
+	definir nota4 como real
+	
+fin clase
+
+//el main
+algoritmo clase1
+	//x es un objeto de la clase alumno
+	definir x,y,z como Alumno
+	
+	x = new Alumno()
+	
+	//se leen las entradas
+	mostrar "Introduzca la primera nota de " x.nombre
+	leer x.notaParcial1
+	mostrar "Introduzca la segunda nota de " x.nombre
+	leer x.notaParcial2
+	mostrar "Introduzca la tercera nota de " x.nombre
+	leer x.notaParcial3
+	mostrar "Introduzca la nota de trabajo de " x.nombre
+	leer x.notaTrabajo
+	mostrar "Introduzca la evaluacion continua de " x.nombre
+	leer x.notaEvalContinua
+	
+	//se hace el proceso
+	x.nota100 = x.notaParcial1 + x.notaParcial2 + x.notaParcial3 +
+				x.notaTrabajo + x.notaEvalContinua
+	x.nota20 = x.nota100*20/100
+	x.nota4 = x.nota100*4/100
+	
+	//se muestran las salidas
+	mostrar "La nota sobre cien del alumno es: " x.nota100
+	mostrar "La nota sobre veinte del alumno es: " x.nota20
+	mostrar "La nota sobre cuatro del alumno es: " x.nota4
+
+fin algoritmo
+	
+	
+	
+	
+	
+	
+	
+	
+////////////	
+	n="Jose"
+	
+	//se instancia la clase
+	x = new Alumno()
+	//antes del new las variables son null
+	y = new Alumno()
+	
+	y.nombre = n
+	
+	mostrar "Introduzca el nombre: "
+	leer x.nombre
+	
+	mostrar "Introduzca la primera nota de " x.nombre
+	leer x.notaParcial1
+	
+	//se acceden a los atributos
+	x.nombre = "Freddy"
+	x.notaParcial1 = 20
+	x.notaParcial2 = 15
+	
+	y.nombre = "Pedro"
+	y.notaParcial1 = 27
+	y.notaParcial2 = x.notaParcial1
+	
+fin algoritmo

@@ -1,0 +1,109 @@
+
+clase Fecha
+	privado definir dia, mes, año como entero
+	
+	publico metodo Fecha(d,m,a)
+		dia = d
+		mes = m 
+		año = a
+	fin metodo
+	
+	publico metodo esUltimoDiaMes()
+		si dia = nroDiasMes entonces
+			return verdadero
+		sino
+			return falso
+		fin si
+	fin metodo
+	
+	publico nroDiasMes()
+		si mes = 1 o mes = 3 o mes = 5 o mes = 7 o mes = 8 o mes =10 o mes = 12 entonces
+			return 31
+		sino
+			si mes = 4 o mes = 6 o mes = 9 o mes = 11 entonces
+				return 30
+			sino
+				si año mod 4 == 0 entonces
+					return 29
+				sino
+					return 28
+				fin si
+			fin si
+		fin si
+	fin metodo
+	
+	publico adelantarFecha(nroDias)
+		para i=1 hasta nroDias hacer
+			si esUltimoDiaMes() entonces
+			dia = 1
+				si mes = 12 entonces
+					mes = 1
+					año = año + 1
+				sino
+					mes = mes + 1
+				fin si
+			sino
+				dia = dia + 1
+			fin si
+		fin para
+	fin metodo
+fin clase
+
+clase Alumno
+	privado definir nombre como caracter
+	privado definir nota como entero
+	
+	//**** el constructor de la clase ****
+	publico metodo Alumno()
+		nombre = "sin nombre"
+		nota = -1
+	fin metodo
+	
+	public metodo setNombre(n)
+		nombre = n
+	fin metodo
+	
+	public metodo getNombre()
+		return nombre
+	fin metodo
+	
+	public metodo setNota(nuevaNota)
+		nota = nuevaNota
+	fin metodo
+	
+	public metodo getNota()
+		return nota
+	fin metodo
+fin clase
+
+algoritmo clase3b
+	definir alum como Alumno
+	definir nom como caracter
+	definir not, i como entero
+	definir mejorAlum como Alumno
+	
+	para i=1 hasta 3 hacer
+		// en cada iteracion nace un nuevo objeto Alumno
+		alum = new Alumno()
+		
+		mostrar "Introduzca el nombre: "
+		leer nom
+		mostrar "Introduzca la nota: "
+		leer not
+		
+		alum.setNombre(nom)
+		alum.setNota(not)
+		
+		si mejorAlum = null entonces
+			mejorAlum = alum
+		sino
+			si alum.getNota() > mejorAlum.getNota() entonces
+				mejorAlum = alum
+			fin si
+		fin si	
+	fin para
+	
+	mostrar "El mejor alumno fue: " mejorAlum.getNombre()
+	mostrar "Y la nota fue de: " mejorAlum.getNota()
+	
+fin algoritmo

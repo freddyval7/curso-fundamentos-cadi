@@ -1,0 +1,105 @@
+@font-face{
+    font-family: 'Disney';
+    src: url(../fonts/waltographUI.ttf)
+}
+@font-face{
+    font-family: 'transformers';
+    src: url(../fonts/TransformersMovie.ttf)
+}
+body{
+    background-color: #151515;
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+/*HEADER*/
+header{
+    background: linear-gradient(to left top, rgb(241, 73, 73),rgb(20, 20, 175));
+    height: 100px;
+}
+#divLogo{
+    text-align: center;
+}
+nav{
+    text-align: center;
+}
+.spanNav{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    text-transform: lowercase;
+}
+.spanNav:hover{
+    /* text-decoration: underline; */
+    border-bottom: white solid 3px;
+}
+
+/*MAIN*/
+h1{
+    font-family: 'transformers';
+    background: linear-gradient(to right, red, blue );
+}
+
+
+/*SECTION de articulos*/
+#section2{
+    background-color: white;
+    text-align: center;
+}
+.articleSection{
+    width: 20%;
+    display: inline-block;
+    height: 310px;
+    text-align: left;
+}
+.imgArticle{
+    width: 270px;
+    height: 150px;
+}
+.imgArticle:hover{
+    cursor: pointer;
+}
+h4{
+    color: #959595;
+    text-transform: capitalize;
+}
+.pArticle{
+    font-weight: bold;
+}
+
+/*SECTION de listas*/
+#listas{
+    height: 300px;
+}
+.articlesListas{
+    width: 49.7%;
+    height: 300px;
+    display: inline-block;
+    color: white;
+    font-style: italic;
+    word-spacing: 4px;
+    line-height: 2rem;
+}
+
+/*Section de Tablas*/
+#tabla{
+    text-align: center;
+    color: white;
+}
+table{
+    margin: 0 auto;
+    background-image: url(../img/strangeImg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.imgTabla{
+    width: 25px;
+    height: 25px;
+}
+tr{
+    height: 75px;
+}
+th, td{
+    padding: 1em;
+    text-shadow: #72f54a -2px 2px 2px;
+}

@@ -1,0 +1,56 @@
+body{
+    background-color: #E0E0E1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0%;
+}
+/*Página 1*/
+header{
+    background-color: #003D69;
+    height: 100px;
+}
+#divLogo{
+    text-align: left;
+}
+nav{
+    text-align: center;
+    height: 100px;
+}
+.spanNav{
+    color: rgba(23, 56, 48, 0.705);
+    text-decoration: none;
+    margin-right: 20px;
+}
+#section1{
+    text-align: center;
+    margin-top: 10px;
+}
+#section2{
+    background-color: #3C3E6C;
+    text-align: center;
+}
+.articleSection{
+    width: 30%;
+    display: inline-block;
+    height: 250px;
+    margin-right: 20px;
+}
+.imgArticle{
+    width: 310px;
+    text-align: left;
+}
+h2{
+    color: #4b667a;
+}
+
+/*Página 2*/
+#header2{
+    background-color: rgb(97, 216, 97);
+    height: 100px;
+    text-align: center;
+}
+#sectionReciclaje{
+    text-align: center;
+}
+.articleReciclaje{
+    display: inline-block;
+}

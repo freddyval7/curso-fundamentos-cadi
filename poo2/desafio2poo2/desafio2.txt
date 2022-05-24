@@ -1,0 +1,73 @@
+
+clase Recibo
+	//se definen los atributos
+	private definir nombreCliente como caracter
+	private definir modelo como caracter
+	private definir diasAlquiler como entero
+	private definir costoDiario como real
+	private definir porc como real
+	
+	//se crea el método para leer las entradas
+	public metodo leerEntradas()
+		mostrar "Introduzca el nombre del cliente: "
+		leer nombreCliente
+		mostrar "Introduzca el modelo del vehículo: "
+		leer modelo
+		mostrar "Introduzca el costo diario del vehículo: "
+		leer costoDiario
+		mostrar "Introduzca los días de alquiler: "
+		leer diasAlquiler
+	fin metodo
+	
+	//se crea el método que calcula el monto total del alquiler
+	public metodo calcularMontoTotal()
+		return costoDiario*diasAlquiler
+	fin metodo
+	
+	//se crea el método que calcula el pago inicial utilizando el parámetro de porc
+	public metodo calcularPagoIni(porc)
+		return calcularMontoTotal()*porc
+	fin metodo
+	
+	//se crea el método para calcular las cuotas diarias utilizando los otros métodos
+	public metodo calcularCuotasDiarias(porc)
+		return (calcularMontoTotal() - calcularPagoIni(porc))/diasAlquiler
+	fin metodo
+	
+	//se crea el método para mostrar todas las salidas
+	public metodo mostrarSalidas(porc)
+		mostrar "El nombre del cliente es: " nombreCliente
+		mostrar "El modelo del vehículo es: " modelo
+		mostrar "El costo diario de alquiler del vehículo es: " costoDiario
+		mostrar "Los días de alquiler son: " diasAlquiler " días"
+		mostrar "El monto total por el servicio de alquiler del vehículo es: " calcularMontoTotal()
+		mostrar "El pago inicial es de: " calcularPagoIni(porc)
+		mostrar "Las cuotas diarias a pagar son de: " calcularCuotasDiarias(porc) " por día"
+	fin metodo
+fin clase
+
+algoritmo desafio2
+	definir x, y como Recibo
+	
+	//se instancian los objetos
+	x = new Recibo()
+	y = new Recibo()
+	
+	//se leen las entradas
+	x.leerEntradas()
+	y.leerEntradas()
+	
+	//se calculan los procesos de x
+	x.calcularMontoTotal()
+	x.calcularPagoIni(0.35)
+	x.calcularCuotasDiarias(0.35)
+	
+	//se calculan los procesos de y
+	y.calcularMontoTotal()
+	y.calcularPagoIni(0.35)
+	y.calcularCuotasDiarias(0.35)
+	
+	//se muestran las salidas
+	x.mostrarSalidas(0.35)
+	y.mostrarSalidas(0.35)
+fin algoritmo

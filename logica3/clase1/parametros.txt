@@ -1,0 +1,9 @@
+FORMALES: ES EL PARAMETRO QUE ESCRIBO EN LA DEFINICION DEL MODULO
+
+ACTUALES: ES EL PARAMETRO QUE SE ESCRIBEN EN EL LLAMADO DEL MODULO
+
+Los parámetros actuales y formales deben tener el mismo NUMERO, TIPO DE DATO y ORDEN
+entre si 
+
+Los modulos pueden tener solo parametros por valor (solo de entrada), solo de referencia 
+(de salida), combinaciones de los dos, o simplemente no tener parámetros

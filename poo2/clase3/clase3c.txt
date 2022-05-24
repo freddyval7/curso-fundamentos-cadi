@@ -1,0 +1,95 @@
+clase Fecha
+
+	privado dia, mes, año como entero
+	
+	publico metodo getDia()
+		retornar dia
+	fin metodo
+	
+	publico metodo getMes()
+		retornar mes
+	fin metodo
+	
+	publico metodo getAño()
+		retornar año
+	fin metodo
+	
+	publico metodo Fecha(d,m,a)
+		dia = d
+		mes = m
+		año = a
+	fin metodo
+
+	publico metodo nroDiasDelMes()
+		si mes = 1 o mes = 3 o mes = 5 o mes = 7 o mes =8 o mes=10 o mes=12 entonces
+			retornar 31
+		sino
+			si mes = 4 o mes = 6 o mes =9 o mes=11 entonces
+				retornar 30
+			sino 
+				si año mod 4 = 0 entonces
+					retornar 29
+				sino
+					retornar 28
+				fin si
+			fin si
+		fin si
+	fin metodo
+
+	publico metodo esUltimoDiaDelMes()
+		si dia = nroDiasDelMes() entonces
+			retornar verdadero
+		sino 
+			retornar falso
+		fin si
+	fin metodo
+
+	public adelantarFecha(nrodias)
+		para i=1 hasta nrodias hacer
+			si EsUltimoDiaMes() entonces
+				dia = 1
+				si mes = 12 entonces
+					mes = 1
+					año = año + 1
+				sino
+					mes = mes + 1
+				fin si
+			sino
+				dia = dia + 1
+			fin si
+		fin para		
+	fin metodo
+
+	public metodo getFechaCadena()
+		retornar getDia()+"/"+getMes()+"/"+getAño()
+	fin metodo
+	
+	public metodo hoyEsNavidad()
+		si getDia() = 24 y getMes() = 12
+			return verdadero
+		sino
+			return falso
+		fin si
+	fin metodo
+	
+	public metodo hoyEsCumple()
+		si getDia() = 7 y getMes() = 10
+			return verdadero
+		sino
+			return falso
+		fin si
+	fin metodo
+	
+fin fecha
+
+algoritmo jugando_con_fechas
+	definir f1 como Fecha(25,12,2001)
+	
+	mostrar "El mes ", f1.getMes()," tiene ", f1.nroDiasDelMes()," dias"
+	mostrar "La fecha inicial es " f1.getFechaCadena() // mostraria 25/12/2001
+	
+	f1.adelantarFecha(7)
+	
+	mostrar "La fecha luego de 7 dias es "+f1.getFechaCadena() // mostraria 1/1/2002
+	
+fin algoritmo 

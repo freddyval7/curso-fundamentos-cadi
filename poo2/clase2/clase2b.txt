@@ -1,0 +1,55 @@
+	
+clase Factura
+	//entradas del problema
+	private definir montoBase como real
+	private definir cliente como caracter
+	
+	//salidas del problema
+	private definir montoAPagar como real
+	
+	public metodo calcularIva(porcIva)
+		return montoBase*porcIva
+	fin metodo
+	
+	public metodo calcularMontoAPagar(porcIva)
+		montoAPagar = montoBase + calcularIva(porcIva)
+	fin metodo
+	
+	public metodo leerEntradas()
+		mostrar "Introduzca el nombre del cliente: "
+		leer cliente
+		mostrar "Introduzca el monto base de la factura: "
+		leer montoBase
+	fin metodo
+	
+	public metodo mostrarSalidas()
+		mostrar "El cliente " nombre
+		mostrar "Debe pagar un monto de Iva de " montoIva
+		mostrar "Siendo el monto total de " montoAPagar
+	fin metodo
+fin clase
+
+algoritmo Clase2
+	//Se define el objeto
+	definir x como Factura
+	definit montoIva como real
+	
+	//Se instancia el objeto
+	x = new Factura()
+	
+	aleatorio(5,25) //MAL
+	nro = aleatorio(5,25) //BIEN
+	
+	//Se leen las entradas
+	x.leerEntradas()
+	
+	//Se guarda el valor de retorno en una variab.
+	montoIva = x.calcularIva(0.14)
+	
+	x.calcularMontoAPagar(0.14)
+	mostrar "El monto de Iva es: " montoIva
+	
+	//Se muestran las salidas
+	x.mostrarSalidas()
+fin algoritmo
+

@@ -1,0 +1,51 @@
+
+Clase Factura
+	//se definen los atributos de la clase Factura
+	definir numeroFactura como real
+	definir rifCliente como real
+	definir nombreCliente como caracter
+	definir nombreProducto como caracter
+	definir precio como real
+	definir cantidad como entero
+	definir subtotal como real
+	definir iva como real
+	definir precioTotal como real
+fin clase
+
+algoritmo Desafio1
+	definir x como Factura
+	
+	//se instancia x
+	x = new Factura()
+	
+	//se leen los datos de entrada
+	mostrar "Introduzca el numero de la factura: "
+	leer x.numeroFactura
+	mostrar "Introduzca el rif del cliente: "
+	leer x.rifCliente
+	mostrar "Introduzca el nombre del cliente: "
+	leer x.nombreCliente
+	mostrar "Introduzca el nombre del producto: "
+	leer x.nombreProducto
+	mostrar "Introduzca el precio base del producto: "
+	leer x.precio
+	mostrar "Introduzca la cantidad a llevar: "
+	leer x.cantidad
+	
+	//se realizan los calculos
+	x.subtotal = x.cantidad*x.precio
+	x.iva = x.subtotal*0.16
+	x.precioTotal = x.subtotal+x.iva
+	
+	//se muestran las salidas
+	mostrar "La factura número: " x.numeroFactura
+	mostrar "Rif del cliente: " x.rifCliente
+	mostrar "Nombre del cliente: " x.nombreCliente
+	mostrar "Nombre del producto: " x.nombreProducto
+	mostrar "Precio base del producto: " x.precio " Bs."
+	mostrar "La cantidad a llevar es de: " x.cantidad " Unidades"
+	mostrar "Precio subtotal del producto: " x.subtotal " Bs."
+	mostrar "El iva del producto (16%) es de: " x.iva " Bs."
+	mostrar "Precio total del producto: " x.precioTotal " Bs."
+
+fin algoritmo
